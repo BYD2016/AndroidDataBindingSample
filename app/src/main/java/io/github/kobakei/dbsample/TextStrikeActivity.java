@@ -6,11 +6,12 @@ import android.os.Bundle;
 
 import io.github.kobakei.dbsample.databinding.TextStrikeActivityBinding;
 
-public class TextStrikeActivity extends AppCompatActivity {
+final public class TextStrikeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        TextStrikeActivityBinding binding = DataBindingUtil.setContentView(this, R.layout.text_strike_activity);
+        TextStrikeActivityBinding binding = DataBindingUtil.setContentView(this,
+                R.layout.text_strike_activity);
     }
 }

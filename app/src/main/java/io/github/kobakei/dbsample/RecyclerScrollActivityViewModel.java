@@ -10,7 +10,7 @@ import android.util.Log;
  * Created by keisukekobayashi on 2017/03/18.
  */
 
-public class RecyclerScrollActivityViewModel {
+final public class RecyclerScrollActivityViewModel {
 
     public ObservableList<Item> items;
 

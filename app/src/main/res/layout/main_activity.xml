@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="io.github.kobakei.dbsample.MainActivity">
 
@@ -14,47 +13,46 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:orientation="vertical"
+        >
 
         <Button
-            android:id="@+id/button1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="8dp"
             android:text="ImageView Picasso sample"
-            android:onClick="@{viewModel::onButton1Click}" />
+            android:textAllCaps="false"
+            android:onClick="@{viewModel::onImagePicassoButtonClick}"
+            />
 
         <Button
-            android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
             android:layout_marginTop="8dp"
             android:text="TextView strike sample"
-            android:onClick="@{viewModel::onButton2Click}" />
+            android:textAllCaps="false"
+            android:onClick="@{viewModel::onTextStrikeButtonClick}"
+            />
 
         <Button
-            android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
             android:layout_marginTop="8dp"
             android:text="RecyclerView scroll event sample"
-            android:onClick="@{viewModel::onButton3Click}" />
+            android:textAllCaps="false"
+            android:onClick="@{viewModel::onRecyclerScrollButtonClick}"
+            />
 
         <Button
-            android:id="@+id/button4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
             android:layout_marginTop="8dp"
             android:text="ListView check position sample"
-            android:onClick="@{viewModel::onButton4Click}" />
+            android:textAllCaps="false"
+            android:onClick="@{viewModel::onListChoiceButtonClick}"
+            />
 
     </LinearLayout>
 

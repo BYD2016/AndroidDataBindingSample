@@ -14,18 +14,19 @@ import android.view.ViewGroup;
 import io.github.kobakei.dbsample.databinding.RecyclerScrollActivityBinding;
 import io.github.kobakei.dbsample.databinding.RecyclerScrollItemBinding;
 
-public class RecyclerScrollActivity extends AppCompatActivity {
+
+final public class RecyclerScrollActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         RecyclerScrollActivityBinding binding = DataBindingUtil.setContentView(this, R.layout.recycler_scroll_activity);
 
-        // ビューモデルの作成
+        // Create a view model
         RecyclerScrollActivityViewModel viewModel = new RecyclerScrollActivityViewModel(this);
         binding.setViewModel(viewModel);
 
-        // RecyclerViewのセットアップ
+        // Set up RecyclerView
         binding.recyclerView.setAdapter(new ObservableRecyclerAdapter(this, viewModel.items));
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
@@ -39,30 +40,32 @@ public class RecyclerScrollActivity extends AppCompatActivity {
             this.context = context;
             this.items = items;
 
-            items.addOnListChangedCallback(new ObservableList.OnListChangedCallback<ObservableList<Item>>() {
+            items.addOnListChangedCallback(
+                new ObservableList.OnListChangedCallback<ObservableList<Item>>() {
                 @Override
                 public void onChanged(ObservableList<Item> items) {
                     notifyDataSetChanged();
                 }
 
                 @Override
-                public void onItemRangeChanged(ObservableList<Item> items, int i, int i1) {
-                    notifyItemRangeChanged(i, i1);
+                public void onItemRangeChanged(ObservableList<Item> items, int positionStart, int itemCount) {
+                    notifyItemRangeChanged(positionStart, itemCount);
                 }
 
                 @Override
-                public void onItemRangeInserted(ObservableList<Item> items, int i, int i1) {
-                    notifyItemRangeInserted(i, i1);
+                public void onItemRangeInserted(ObservableList<Item> items, int positionStart, int itemCount) {
+                    notifyItemRangeInserted(positionStart, itemCount);
                 }
 
                 @Override
-                public void onItemRangeMoved(ObservableList<Item> items, int i, int i1, int i2) {
-                    notifyItemMoved(i, i1);
+                public void onItemRangeMoved(ObservableList<Item> items, int fromPosition, int toPosition,
+                    int itemCount) {
+                    notifyItemMoved(fromPosition, toPosition);
                 }
 
                 @Override
-                public void onItemRangeRemoved(ObservableList<Item> items, int i, int i1) {
-                    notifyItemRangeRemoved(i, i1);
+                public void onItemRangeRemoved(ObservableList<Item> items, int positionStart, int itemCount) {
+                    notifyItemRangeRemoved(positionStart, itemCount);
                 }
             });
         }
@@ -70,7 +73,8 @@ public class RecyclerScrollActivity extends AppCompatActivity {
         @Override
         public BindingViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             LayoutInflater inflater = LayoutInflater.from(context);
-            RecyclerScrollItemBinding binding = DataBindingUtil.inflate(inflater, R.layout.recycler_scroll_item, parent, false);
+            RecyclerScrollItemBinding binding = DataBindingUtil.inflate(inflater,
+                R.layout.recycler_scroll_item, parent, false);
             return new BindingViewHolder(binding);
         }
 
@@ -90,7 +94,7 @@ public class RecyclerScrollActivity extends AppCompatActivity {
     }
 
     /**
-     * Data binding x RecyclerView用共通クラス
+     * Data binding x Common class for RecyclerView
      */
     static class BindingViewHolder extends RecyclerView.ViewHolder {
 

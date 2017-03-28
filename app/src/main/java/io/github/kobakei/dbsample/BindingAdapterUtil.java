@@ -29,7 +29,7 @@ import com.squareup.picasso.Picasso;
 public class BindingAdapterUtil {
 
     /**
-     * ImageViewに画像URL
+     * ImageView src
      * @param imageView
      * @param imageUrl
      */
@@ -43,7 +43,7 @@ public class BindingAdapterUtil {
     //-------------------------------
 
     /**
-     * TextViewの打ち消し線
+     * Strikethrough of TextView
      * @param textView
      * @param strike
      */

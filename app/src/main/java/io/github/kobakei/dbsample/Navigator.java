@@ -3,6 +3,7 @@ package io.github.kobakei.dbsample;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 
 /**
  * Created by keisukekobayashi on 2017/03/18.
@@ -10,23 +11,25 @@ import android.support.annotation.NonNull;
 
 public class Navigator {
 
-    public static void navigateToImagePicasso(@NonNull Context from) {
-        Intent intent = new Intent(from, ImagePicassoActivity.class);
+    private static void navigatorToActivity(@NonNull Context from,
+                                            Class<? extends AppCompatActivity> clazz) {
+        Intent intent = new Intent(from, clazz);
         from.startActivity(intent);
     }
 
-    public static void navigateToTextStrike(@NonNull Context from) {
-        Intent intent = new Intent(from, TextStrikeActivity.class);
-        from.startActivity(intent);
+    static void navigateToImagePicasso(@NonNull Context from) {
+        navigatorToActivity(from, ImagePicassoActivity.class);
     }
 
-    public static void navigateToRecyclerScroll(@NonNull Context from) {
-        Intent intent = new Intent(from, RecyclerScrollActivity.class);
-        from.startActivity(intent);
+    static void navigateToTextStrike(@NonNull Context from) {
+        navigatorToActivity(from, TextStrikeActivity.class);
     }
 
-    public static void navigateToListChoice(@NonNull Context from) {
-        Intent intent = new Intent(from, ListChoiceActivity.class);
-        from.startActivity(intent);
+    static void navigateToRecyclerScroll(@NonNull Context from) {
+        navigatorToActivity(from, RecyclerScrollActivity.class);
+    }
+
+    static void navigateToListChoice(@NonNull Context from) {
+        navigatorToActivity(from, ListChoiceActivity.class);
     }
 }

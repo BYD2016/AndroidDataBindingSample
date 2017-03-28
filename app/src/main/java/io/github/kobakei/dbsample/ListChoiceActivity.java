@@ -16,7 +16,8 @@ import java.util.List;
 import io.github.kobakei.dbsample.databinding.ListChoiceActivityBinding;
 import io.github.kobakei.dbsample.databinding.ListChoiceItemBinding;
 
-public class ListChoiceActivity extends AppCompatActivity {
+
+final public class ListChoiceActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

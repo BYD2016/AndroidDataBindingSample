@@ -1,25 +1,25 @@
 # AndroidDataBindingSample
-shibuya.apk #13のサンプル
+shibuya.apk #13 Sample
 
-## 画面
+## Screen
 
 ### ImagePicassoActivity
 
-- ImageViewにPicassoで画像を読み込むサンプル
+- Sample to load images in Picasso into ImageView
 
 ### TextStrikeActivity
 
-- TextViewに打ち消し線を付けるサンプル
+- Sample to add strikethrough to TextView
 
 ### RecyclerScrollActivity
 
-- RecyclerViewのスクロールイベントを受け取るサンプル
+- Sample to receive RecyclerView scroll event
 
 ### ListChoiceActivity
 
-- Multichoice ListViewのチェック位置を取得するサンプル
+- Sample to obtain check position of Multichoice ListView
 
-## ライセンス
+## license
 
 ```
 Copyright 2017 Keisuke Kobayashi

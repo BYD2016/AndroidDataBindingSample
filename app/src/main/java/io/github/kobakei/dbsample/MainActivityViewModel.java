@@ -7,27 +7,27 @@ import android.view.View;
  * Created by keisukekobayashi on 2017/03/18.
  */
 
-public class MainActivityViewModel {
+final public class MainActivityViewModel {
 
     private final Context context;
 
-    public MainActivityViewModel(Context context) {
+    MainActivityViewModel(Context context) {
         this.context = context;
     }
 
-    public void onButton1Click(View view) {
+    public void onImagePicassoButtonClick(View view) {
         Navigator.navigateToImagePicasso(context);
     }
 
-    public void onButton2Click(View view) {
+    public void onTextStrikeButtonClick(View view) {
         Navigator.navigateToTextStrike(context);
     }
 
-    public void onButton3Click(View view) {
+    public void onRecyclerScrollButtonClick(View view) {
         Navigator.navigateToRecyclerScroll(context);
     }
 
-    public void onButton4Click(View view) {
+    public void onListChoiceButtonClick(View view) {
         Navigator.navigateToListChoice(context);
     }
 }
